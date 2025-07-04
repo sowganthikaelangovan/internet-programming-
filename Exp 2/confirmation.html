@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Booking Confirmation</title>
+</head>
+<body style="font-family: Arial; background: #e8f5e9; text-align: center; padding: 50px;">
+  <h2>Booking Confirmation</h2>
+  <button onclick="logout()" style="position: absolute; top: 20px; right: 20px;">Logout</button>
+  <p id="message"></p>
+
+  <script>
+    if (!sessionStorage.getItem("currentUser")) {
+      window.location.href = "login.html";
+    }
+
+    const fullname = localStorage.getItem("fullname");
+    const checkin = localStorage.getItem("checkin");
+    const checkout = localStorage.getItem("checkout");
+    const roomtype = localStorage.getItem("roomtype");
+    const roomNumber = localStorage.getItem("roomNumber");
+
+    document.getElementById("message").innerHTML = `
+      <strong>Thank you, ${fullname}!</strong><br>
+      Your booking for a <strong>${roomtype}</strong> room from <strong>${checkin}</strong> to <strong>${checkout}</strong> has been confirmed.<br>
+      Your room number is <strong>#${roomNumber}</strong>.
+    `;
+
+    function logout() {
+      sessionStorage.clear();
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

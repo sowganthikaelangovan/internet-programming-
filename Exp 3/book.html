@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SwiftBus | Book Your Ticket</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function setMinDate() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById("date").setAttribute("min", today);
+        }
+    </script>
+</head>
+<body onload="setMinDate()">
+    <header><h1>SwiftBus</h1></header>
+    <section class="booking-section">
+        <h2>Search Buses</h2>
+        <form action="buses.html" method="GET">
+            <label>From:</label>
+            <select name="from" required>
+                <option value="">Select source</option>
+                <option>Chennai</option>
+                <option>Bangalore</option>
+                <option>Hyderabad</option>
+                <option>Mumbai</option>
+            </select>
+            <label>To:</label>
+            <select name="to" required>
+                <option value="">Select destination</option>
+                <option>Chennai</option>
+                <option>Bangalore</option>
+                <option>Hyderabad</option>
+                <option>Mumbai</option>
+            </select>
+            <label>Date:</label>
+            <input type="date" id="date" name="date" required>
+            <button type="submit">Search Buses</button>
+        </form>
+    </section>
+</body>
+</html>

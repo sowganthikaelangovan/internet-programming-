@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register - SwiftBus</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Enter Passenger Details</h2>
+  <form action="connections.php" method="POST">
+    <input type="hidden" name="sea id="seat">
+    <input type="hidden" name="travel_date" id="travel_date">
+
+    <label for="name">Full Name</label>
+    <input type="text" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" name="email" required>
+
+    <label for="phone">Phone</label>
+    <input type="text" name="phone" required>
+
+    <button type="submit">Continue to Payment</button>
+  </form>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("seat").value = params.get("seat");
+    document.getElementById("travel_date").value = params.get("date");
+  </script>
+</body>
+</html>

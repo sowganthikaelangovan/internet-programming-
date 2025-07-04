@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order a Cake | Sweet Treats</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Order Cake</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="order.html">Order Cake</a>
+    <a href="view.php">View Orders</a>
+  </nav>
+</header>
+
+<main>
+  <section class="form-section">
+    <h2>Place Your Order</h2>
+    <form action="placeorder.php" method="POST">
+      <label>Your Name:</label>
+      <input type="text" name="name" required>
+
+      <label>Cake Type:</label>
+      <input type="text" name="cake" placeholder="e.g., Chocolate, Red Velvet" required>
+
+      <label>Size:</label>
+      <select name="size" required>
+        <option value="Small">Small</option>
+        <option value="Medium">Medium</option>
+        <option value="Large">Large</option>
+      </select>
+
+      <label>Delivery Date:</label>
+      <input type="date" name="delivery_date" required>
+
+      <input type="submit" value="Place Order" class="btn">
+    </form>
+  </section>
+</main>
+</body>
+</html>
