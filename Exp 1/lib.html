@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library Management</title>
+  <style>
+    body {
+      background-color: #f3e5f5;
+      font-family: Arial, sans-serif;
+      color: #000000;
+      font-style: bold;
+    }
+    form{
+      margin-bottom: 20px;
+    }
+  </style>
+  <script>
+    function validateForm() {
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let password = document.getElementById("password").value;
+
+      if (!name || !email || !password) {
+        alert("All fields are required!");
+        return false;
+      }
+
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters.");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <h2>Library Management System</h2>
+  <img src="https://cdn-icons-png.flaticon.com/512/2965/2965871.png" alt="Library Icon" width="300">
+
+  <h3>Register</h3>
+  <form method="POST" action="register.php" onsubmit="return validateForm()">
+    Name: <input type="text" name="name" id="name"><br>
+    Email: <input type="email" name="email" id="email"><br>
+    Password: <input type="password" name="password" id="password"><br>
+    <input type="submit" value="Register">
+  </form>
+  <h3>Login</h3>
+  <form method="POST" action="login.php">
+    Email: <input type="email" name="email"><br>
+    Password: <input type="password" name="password"><br>
+    <input type="submit" value="Login">
+  </form
+  <h3>Contact Us</h3>
+  Email: library@example.com<br>
+  Phone: +91-1234567890
+  <footer>
+    <p>&copy; 2025 Library Management</p>
+  </footer>
+</body>
+</html>
