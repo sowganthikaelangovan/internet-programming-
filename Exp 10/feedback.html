@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Course Feedback Form</title>
+  <style>
+    body { font-family: Arial; background-color: #f0f8ff; text-align: center; padding: 40px; }
+    form { display: inline-block; text-align: left; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+    input, textarea { width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc; }
+    button { margin-top: 20px; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background-color: #45a049; }
+  </style>
+</head>
+<body>
+  <h2>Course Feedback Form</h2>
+  <form action="save_feedback.php" method="POST">
+    <label>Name:</label><br>
+    <input type="text" name="name" required><br>
+
+    <label>Course:</label><br>
+    <input type="text" name="course" required><br>
+
+    <label>Feedback:</label><br>
+    <textarea name="feedback" rows="4" required></textarea><br>
+
+    <button type="submit">Submit Feedback</button>
+  </form>
+</body>
+</html>
