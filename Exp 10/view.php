@@ -9,7 +9,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$result = $conn->query("SELECT * FROM feedback ORDER BY id DESC");
+$result = $conn->query("SELECT * FROM feedback VIEW BY id DESC");
 ?>
 
 <!DOCTYPE html>
