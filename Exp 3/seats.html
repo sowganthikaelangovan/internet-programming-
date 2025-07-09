@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SwiftBus | Select Seat</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .seat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 60px);
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .seat { background: #ccc; padding: 15px; text-align: center; border-radius: 6px; cursor: pointer; font-weight: bold; }
+    .seat.selected { background: #388e3c; color: white; }
+    .seat.occupied { background: #d32f2f; cursor: not-allowed; }
+  </style>
+</head>
+<body>
+  <header><h1>Select Your Seat - SwiftBus</h1></header>
+  <section class="form-section">
+    <form id="seatForm" action="register.html" method="GET" onsubmit="return validateSeat()">
+      <div class="seat-grid">
+        <div class="seat" onclick="selectSeat(this)">1</div>
+        <div class="seat occupied">2</div>
+        <div class="seat" onclick="selectSeat(this)">3</div>
+        <div class="seat" onclick="selectSeat(this)">4</div>
+        <div class="seat" onclick="selectSeat(this)">5</div>
+        <div class="seat" onclick="selectSeat(this)">6</div>
+        <div class="seat occupied">7</div>
+        <div class="seat" onclick="selectSeat(this)">8</div>
+      </div>
+
+      <input type="hidden" name="seat" id="seat" required>
+      <input type="hidden" name="date" id="date" required>
+      <button type="submit">Continue</button>
+    </form>
+  </section>
+
+  <script>
+    let selectedSeat = null;
+
+    function selectSeat(seat) {
+      if (seat.classList.contains('occupied')) return;
+      if (selectedSeat) selectedSeat.classList.remove('selected');
+      seat.classList.add('selected');
+      selectedSeat = seat;
+      document.getElementById("seat").value = seat.innerText;
+    }
+
+    function validateSeat() {
+      if (!selectedSeat) {
+        alert("Please select a seat.");
+        return false;
+      }
+      return true;
+    }
+
+    const url = new URL(window.location.href);
+    document.getElementById("date").value = url.searchParams.get("date");
+  </script>
+</body>
+</html>

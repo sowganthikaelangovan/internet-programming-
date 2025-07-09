@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: #fff0f5;
+  color: #4e4e4e;
+  margin: 0;
+}
+
+header {
+  background: linear-gradient(to right, #fcbad3, #ffdac1);
+  color: #fff;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #ffd1dc;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #ffeef2;
+  position: relative;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  color: #c2185b;
+}
+
+.hero p {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.btn {
+  background: #ff80ab;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1.5rem;
+  box-shadow: 0 6px 12px rgba(255, 105, 135, 0.2);
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #ec407a;
+}
+
+main {
+  padding: 2rem;
+}
+
+.form-section {
+  max-width: 600px;
+  background: #fff8fa;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  border: 2px solid #f8bbd0;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 0.9rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #f7c3d3;
+  border-radius: 8px;
+  background: #fffafc;
+}
+
+form input[type="submit"] {
+  background: #ffb6b9;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background: #ff5e78;
+}
+
+table {
+  width: 90%;
+  margin: auto;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+}
+
+th, td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #ffd1dc;
+}
+
+th {
+  background: #f48fb1;
+  color: white;
+}
+
+.btn.small {
+  background: #ff5c8a;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #fcbad3;
+  color: #fff;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+/* 🍰 Cake Animation */
+.cake {
+  margin: 0 auto;
+  position: relative;
+  width: 100px;
+  animation: bounce 2s infinite;
+}
+
+.layer {
+  width: 100px;
+  height: 20px;
+  background: #f8bbd0;
+  border-radius: 10px;
+  margin-top: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.layer1 { background: #fce4ec; }
+.layer2 { background: #f8bbd0; }
+.layer3 { background: #f06292; }
+
+.cherry {
+  width: 20px;
+  height: 20px;
+  background: #d50000;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: 40px;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}

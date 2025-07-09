@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Appointment | GlowUp Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Book Appointment</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="book.html">Book Appointment</a>
+    <a href="appointments.php">View Appointments</a>
+  </nav>
+</header>
+
+<main>
+  <section class="form-section">
+    <h2>Appointment Form</h2>
+    <form action="submit.php" method="POST">
+      <label>Name:</label>
+      <input type="text" name="name" required>
+
+      <label>Service:</label>
+      <select name="service" required>
+        <option>Hair Styling</option>
+        <option>Facial</option>
+        <option>Makeup</option>
+        <option>Manicure</option>
+        <option>Pedicure</option>
+      </select>
+
+      <label>Date:</label>
+      <input type="date" name="date" required>
+
+      <label>Time:</label>
+      <input type="time" name="time" required>
+
+      <input type="submit" value="Book Now" class="btn">
+    </form>
+  </section>
+</main>
+</body>
+</html>

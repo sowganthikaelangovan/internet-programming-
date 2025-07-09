@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Your Room</title>
+</head>
+<body style="font-family: Arial; background: #fff3e0; text-align: center; padding: 50px;">
+  <h2>Room Booking Form</h2>
+  <button onclick="logout()" style="position: absolute; top: 20px; right: 20px;">Logout</button>
+
+  <form onsubmit="bookRoom(event)">
+    <input type="text" id="fullname" placeholder="Full Name" required><br><br>
+    <input type="date" id="checkin" required><br><br>
+    <input type="date" id="checkout" required><br><br>
+    <select id="roomtype" required>
+      <option value="">Select Room Type</option>
+      <option value="Single">Single</option>
+      <option value="Double">Double</option>
+      <option value="Suite">Suite</option>
+    </select><br><br>
+    <button type="submit">Book Now</button>
+  </form>
+
+  <script>
+    if (!sessionStorage.getItem("currentUser")) {
+      window.location.href = "login.html";
+    }
+
+    const today = new Date().toISOString().split("T")[0];
+    document.getElementById("checkin").setAttribute("min", today);
+
+    document.getElementById("checkin").addEventListener("change", function () {
+      document.getElementById("checkout").setAttribute("min", this.value);
+    });
+
+    function bookRoom(event) {
+      event.preventDefault();
+
+      const fullname = document.getElementById("fullname").value;
+      const checkin = document.getElementById("checkin").value;
+      const checkout = document.getElementById("checkout").value;
+      const roomtype = document.getElementById("roomtype").value;
+      const roomNumber = Math.floor(100 + Math.random() * 900); // e.g., 3-digit room number
+
+      localStorage.setItem("fullname", fullname);
+      localStorage.setItem("checkin", checkin);
+      localStorage.setItem("checkout", checkout);
+      localStorage.setItem("roomtype", roomtype);
+      localStorage.setItem("roomNumber", roomNumber);
+
+      window.location.href = "confirmation.html";
+    }
+
+    function logout() {
+      sessionStorage.clear();
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
